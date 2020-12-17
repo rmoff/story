@@ -13,7 +13,7 @@
       {{ partial "li.html" . }}
     {{ end }}
   {{ else }}
-    {{ range where (where $pages ".Date.Unix" "<" now.Unix) "Section" "ne" "slides" }}
+  {{ range where .Paginator.Pages ".Params.skip" "ne" "true" }}
       {{ partial "li.html" . }}
     {{ end }}
   {{ end }}
